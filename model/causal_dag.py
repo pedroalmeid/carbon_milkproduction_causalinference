@@ -1,0 +1,130 @@
+causal_graph = """
+digraph {
+    Predominant_Soil_Type
+    Lactating_Cows
+    Dry_Cows
+    Heifers
+    Calves
+    Bulls
+    Lactating_Cows_Weight
+    Dry_Cows_Weight
+    Heifers_Weight
+    Calves_Weight
+    Bulls_Weight
+    Females
+    Males
+    Productivity
+    Total_Milk_Production
+    Milk_Protein_Percentage
+    Milk_Fat_Percentage
+    Total
+    Diesel
+    Gasoline
+    Other_Fuel
+    Electricity_Grid
+    Photovoltaic_Energy
+    Pasture_Area
+    Non_Organic_Fertilizer
+    Organic_Fertilizer
+    co2_enteric_fermentation
+    co2_manure_management
+    co2_fertilizer_emissions
+    co2_energy_emissions
+    Dietary_Strategy_Cluster
+    Cattle_Breed
+    Production_System
+
+    Diesel -> co2_energy_emissions;
+    Gasoline -> co2_energy_emissions;
+    Other_Fuel -> co2_energy_emissions;
+    Electricity_Grid -> co2_energy_emissions;
+    Photovoltaic_Energy -> co2_energy_emissions; 
+
+    Non_Organic_Fertilizer -> co2_fertilizer_emissions;
+    Organic_Fertilizer -> co2_fertilizer_emissions; 
+
+    Predominant_Soil_Type -> Dietary_Strategy_Cluster;
+    Predominant_Soil_Type -> Non_Organic_Fertilizer
+    Predominant_Soil_Type -> Organic_Fertilizer;
+    Predominant_Soil_Type -> co2_fertilizer_emissions; 
+
+    Lactating_Cows -> Females;
+    Lactating_Cows -> Males;
+    Dry_Cows -> Females;
+    Dry_Cows -> Males;
+
+    Lactating_Cows -> co2_enteric_fermentation;
+    Dry_Cows -> co2_enteric_fermentation;
+    Heifers -> co2_enteric_fermentation;
+    Calves -> co2_enteric_fermentation;
+    Bulls -> co2_enteric_fermentation;
+    Lactating_Cows -> co2_manure_management;
+    Dry_Cows -> co2_manure_management;
+    Heifers -> co2_manure_management;
+    Calves -> co2_manure_management;
+    Bulls -> co2_manure_management;
+
+    Lactating_Cows -> Total;
+    Dry_Cows -> Total;
+    Heifers -> Total;
+    Calves -> Total;
+    Bulls -> Total;
+
+    Lactating_Cows -> Total_Milk_Production;
+
+    Dietary_Strategy_Cluster -> Milk_Protein_Percentage;
+    Dietary_Strategy_Cluster -> Milk_Fat_Percentage;
+    Productivity -> Milk_Protein_Percentage;
+    Productivity -> Milk_Fat_Percentage;
+
+    Lactating_Cows_Weight -> co2_enteric_fermentation;
+    Lactating_Cows_Weight -> co2_manure_management;
+    Dry_Cows_Weight -> co2_enteric_fermentation;
+    Dry_Cows_Weight -> co2_manure_management;
+    Heifers_Weight -> co2_enteric_fermentation;
+    Heifers_Weight -> co2_manure_management;
+    Calves_Weight -> co2_enteric_fermentation;
+    Calves_Weight -> co2_manure_management;
+    Bulls_Weight -> co2_enteric_fermentation;
+    Bulls_Weight -> co2_manure_management;
+
+    Lactating_Cows -> Organic_Fertilizer;
+    Dry_Cows -> Organic_Fertilizer;
+    Heifers -> Organic_Fertilizer;
+    Calves -> Organic_Fertilizer;
+    Bulls -> Organic_Fertilizer; 
+
+    Lactating_Cows_Weight -> Total;
+    Dry_Cows_Weight -> Total; 
+    Heifers_Weight -> Total;
+    Calves_Weight -> Total;
+    Bulls_Weight -> Total; 
+
+    Dietary_Strategy_Cluster -> Calves_Weight;
+    Dietary_Strategy_Cluster -> Heifers_Weight;
+    Dietary_Strategy_Cluster -> Total;
+    Dietary_Strategy_Cluster -> co2_enteric_fermentation;
+    Dietary_Strategy_Cluster -> co2_manure_management;
+    Dietary_Strategy_Cluster -> Productivity;
+
+    Pasture_Area -> Non_Organic_Fertilizer;
+    Pasture_Area -> Organic_Fertilizer; 
+    Pasture_Area -> Dietary_Strategy_Cluster;
+
+    Females -> Total;
+    Females -> co2_enteric_fermentation;
+    Females -> co2_manure_management;
+
+    Cattle_Breed -> Productivity;
+    Cattle_Breed -> Milk_Protein_Percentage; Cattle_Breed -> Milk_Fat_Percentage;
+    Cattle_Breed -> Lactating_Cows_Weight; Cattle_Breed -> Dry_Cows_Weight;
+    Cattle_Breed -> Heifers_Weight;
+    Cattle_Breed -> Calves_Weight;
+    Cattle_Breed -> Bulls_Weight;
+
+    Production_System -> Dietary_Strategy_Cluster;
+    Production_System -> co2_manure_management;
+    Production_System -> Non_Organic_Fertilizer;
+    Production_System -> Organic_Fertilizer;
+}
+"""
