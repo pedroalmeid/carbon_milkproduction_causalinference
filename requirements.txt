@@ -3,3 +3,4 @@ numpy
 dowhy
 matplotlib
 ipykernel
+seaborn
