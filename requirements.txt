@@ -4,3 +4,4 @@ dowhy
 matplotlib
 ipykernel
 seaborn
+networkx

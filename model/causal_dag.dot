@@ -1,4 +1,4 @@
-causal_graph = """
+
 digraph {
     Predominant_Soil_Type
     Lactating_Cows
@@ -129,4 +129,3 @@ digraph {
     Production_System -> Non_Organic_Fertilizer;
     Production_System -> Organic_Fertilizer;
 }
-"""

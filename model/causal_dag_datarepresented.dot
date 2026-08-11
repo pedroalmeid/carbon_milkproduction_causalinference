@@ -1,4 +1,4 @@
-causal_graph = """
+
 digraph {
     Predominant_Soil_Type
     Lactating_Cows
@@ -31,8 +31,6 @@ digraph {
     co2_fertilizer_emissions
     co2_energy_emissions
     Dietary_Strategy_Cluster
-    Cattle_Breed
-    Production_System
 
     Diesel -> co2_energy_emissions;
     Gasoline -> co2_energy_emissions;
@@ -114,19 +112,4 @@ digraph {
     Females -> Total;
     Females -> co2_enteric_fermentation;
     Females -> co2_manure_management;
-
-    Cattle_Breed -> Productivity;
-    Cattle_Breed -> Milk_Protein_Percentage;
-    Cattle_Breed -> Milk_Fat_Percentage;
-    Cattle_Breed -> Lactating_Cows_Weight;
-    Cattle_Breed -> Dry_Cows_Weight;
-    Cattle_Breed -> Heifers_Weight;
-    Cattle_Breed -> Calves_Weight;
-    Cattle_Breed -> Bulls_Weight;
-
-    Production_System -> Dietary_Strategy_Cluster;
-    Production_System -> co2_manure_management;
-    Production_System -> Non_Organic_Fertilizer;
-    Production_System -> Organic_Fertilizer;
 }
-"""
