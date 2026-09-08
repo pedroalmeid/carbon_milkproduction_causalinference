@@ -45,11 +45,11 @@ O fluxo analítico está dividido em etapas sequenciais:
    * Instanciações dos modelos causais via biblioteca **DoWhy** (`dowhy.gcm`), estruturados a partir do DAG representado em NetworkX.
    * Parametrização dos mecanismos causais: nós contínuos ajustados por modelos de regressão linear aditiva e nós categóricos por classificadores Random Forest.
 4. **Simulação Contrafactual & Avaliação de Trade-off**:
-   * Amostragem intervencional de $do(\text{Dietary\_Strategy\_Cluster} = k)$ para cada cluster $k \in \{0, 1, 2, 3\}$.
-   * Estimação das médias causais absolutas de Produtividade esperada $E[\text{Productivity} \mid do(\text{Cluster}=k)]$ e Emissões esperadas $E[\text{co2\_enteric\_fermentation} \mid do(\text{Cluster}=k)]$.
-   * Cálculo da razão de eficiência: $\text{Ratio} = \frac{\text{Produtividade}}{\text{Emissões}}$.
+   * Amostragem intervencional de $do(\text{Dieta} = k)$ (via variável `Dietary_Strategy_Cluster`) para cada cluster $k \in \{0, 1, 2, 3\}$.
+   * Estimação das médias causais absolutas de Produtividade esperada $E[\text{Produtividade} \mid do(\text{Dieta}=k)]$ e Emissões esperadas $E[\text{Emissoes} \mid do(\text{Dieta}=k)]$ (referentes às variáveis `Productivity` e `co2_enteric_fermentation`).
+   * Cálculo da razão de eficiência: $\text{Ratio} = \frac{\text{Produtividade}}{\text{Emissoes}}$.
 5. **Inspeção de Força Causal (*Arrow Strength*)**:
-   * Avaliação da magnitude direta do arco $\text{Dieta} \to \text{Emissões}$ e $\text{Dieta} \to \text{Produtividade}$.
+   * Avaliação da magnitude direta do arco $\text{Dieta} \to \text{Emissoes}$ e $\text{Dieta} \to \text{Produtividade}$.
 
 ---
 
